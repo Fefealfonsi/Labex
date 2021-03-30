@@ -11,6 +11,9 @@ Suas funcionalidades são: </h3>
 <p> 1-) Um usuário comun pode escolher uma das viagens disponíveis e se candidatar preenchendo um formulário.</p>
 <p> 2-) O administrador pode (após fazer o login) criar uma viagem nova e fazer o controle de qual usuário comum irá ou não embarcar em cada uma das viagens na página de detalhes .</p>
 
+<h3> 🔗 Link do Surge </h3>
+http://smiling-lamp.surge.sh/
+
 <h3> ✅ O que funciona no projeto: </h3>
 <p> 1-)Formulário de inscrição.</p>
 <p> 2-) Formulário de criação de viagens</p>
@@ -22,10 +25,10 @@ Suas funcionalidades são: </h3>
 <h3> ❌ O que não funciona no projeto: </h3>
 <p> 1-) Ao enviar o formulários, ou aceitar ou recusar um usuário, a página não atualiza automaticamente.</p>
 
-<h1> 💡 Tecnologias utilizadas:</h1>
+<h3> 💡 Tecnologias utilizadas:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p>
 
-<h1> 📚 Bibliotcas utilizadas:</h1>
+<h3> 📚 Bibliotcas utilizadas:</h3>
 
 <p> 2-) Styled Components </p>
 <p> 3-) Axios </p>
