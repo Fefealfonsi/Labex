@@ -22,6 +22,11 @@ padding:0.5em;
 font-family: 'Audiowide', cursive;
 border-radius:30px;   
 font-size: 20px;
+&:hover{
+  height:75px;
+  background-color: rgba(10,0,70,0.5);
+
+}
 `
 
 const AdmHeader=() =>{
