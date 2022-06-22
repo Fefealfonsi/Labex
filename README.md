@@ -12,7 +12,7 @@ Suas funcionalidades são: </h3>
 <p> 2-) O administrador pode (após fazer o login) criar uma viagem nova e fazer o controle de qual usuário comum irá ou não embarcar em cada uma das viagens na página de detalhes .</p>
 
 <h3> 🔗 Link do Surge </h3>
-http://smiling-lamp.surge.sh/
+http://projeto-labex.surge.sh
 
 <h3> ✅ O que funciona no projeto: </h3>
 <p> 1-)Formulário de inscrição.</p>
