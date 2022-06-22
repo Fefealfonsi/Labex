@@ -14,7 +14,7 @@ p{
 }
 `
 const ButtonHeader=styled.button`
-background-color: black;
+background-color:black;
 height:70px;
 margin-top:1.5em;
 color:white;
@@ -22,6 +22,12 @@ padding:0.5em;
 font-family: 'Audiowide', cursive;
 border-radius:30px;   
 font-size: 20px;
+&:hover{
+  height:75px;
+  background-color: rgba(10,0,70,0.5);
+
+}
+
 `
 
 const Header=() =>{

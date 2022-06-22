@@ -1,65 +1,17 @@
 import React from 'react'
 import { useParams,useHistory } from 'react-router-dom'
-import {useForm} from '../hooks/useForm'
-import styled from 'styled-components'
+import {useForm} from '../../hooks/useForm'
 import axios from "axios";
-import {Countries} from "./Countries"
-import Header from './Header'
+import {Countries} from "../../components/Countries"
+import Header from '../../components/Header'
+import {ContainerForm,Form,Input, Select, ButtonForm}from "./styled"
 
-const ContainerForm= styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  h1{
-    color:white;
-    
-  }
-  height:100vh;
- `
-const Form= styled.form`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  margin:2em;
-
-`
-const Input= styled.input`
-  padding: 10px;
-  width: 300px;
-  margin: 0.5em;
-`
-
-const Select= styled.select`
-  padding: 10px;
-  width: 320px;
-  margin: 0.5em;
-  
-`
-const ButtonForm=styled.button`
-background-color: rgba(0,0,0,0.8);
-height:70px;
-margin-top:1.5em;
-color:white;
-padding:0.5em;
-font-family: 'Audiowide', cursive;
-border-radius:30px;   
-font-size: 20px;
-`
 function ApplicationFormPage(props) {
-
-
-  const history=useHistory()
-
-  const goToHome=()=>{
-    history.push('/')
-  } 
-
   const { id } = useParams()
-  const { form, onChange } = useForm({ name: "", age: "", profession: "",country:"",applicationText:"" });
+  const { form, onChange, clearForm} = useForm({ name: "", age: "", profession: "",country:"",applicationText:"" });
  
     const handleInputChange = (event) => {
       const { value, name } = event.target;
-  
       onChange(value, name);
     };
   
@@ -69,17 +21,17 @@ function ApplicationFormPage(props) {
       
     };
 
-
   const submitForm = () => {
     
     axios
         .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips/${id}/apply`,form)
         .then((response) => {
-         alert("Obrigada por se inscrver, estamos na torcida!", response.data.message)
-         console.log("OK", response)
+         alert("Obrigada por se inscrver, estamos na torcida!")
+         clearForm()
+        
         })
-        .catch(e => {
-            console.log(e)
+        .catch(err => {
+            alert(err.message)
         })
     }
   
@@ -98,6 +50,7 @@ function ApplicationFormPage(props) {
             name={"name"}
             type={"text"}
             pattern={"(.*[a-z]){3}"}
+            title= "O nome deve ter ao menos 3 letras"
             required
           />
           
@@ -108,6 +61,7 @@ function ApplicationFormPage(props) {
             name={"age"}
             type={"number"}
             min="18"
+            title= "você deve ter pelo menos 18 anos para se inscrever"
             required
           />
           <Input
@@ -117,6 +71,7 @@ function ApplicationFormPage(props) {
             name={"profession"}
             type={"text"}
             pattern={"(.*[a-z]){10}"}
+            title= "A profissão deve ter ao menos 10 caracteres"
             required
           />
           <Select placeholder={"País"} 
@@ -124,7 +79,7 @@ function ApplicationFormPage(props) {
             value={form.country}
             name={"country"}
             type={"text"}
-            required>
+            >
             <Countries/>
           </Select>
           
@@ -135,6 +90,7 @@ function ApplicationFormPage(props) {
             name={"applicationText"}
             type={"text"}
             pattern={"(.*[a-z]){30}"}
+            title= "O texto de candidatura deve ter ao menos 30 caracteres"
             required
           />
           <ButtonForm onClick={onSubmitForm}>Inscrever-se</ButtonForm>

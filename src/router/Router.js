@@ -1,11 +1,11 @@
 import React from 'react'
-import HomePage from '../components/HomePage'
-import ApplicationFormPage from '../components/ApplicationFormPage'
-import ListTripsPage from '../components/ListTripsPage'
-import CreateTripPage from '../components/CreateTripPage'
-import TripDetailsPage from '../components/TripDetailsPage'
-import LoginPage from '../components/LoginPage'
-import AdmListPage from '../components/AdmListPage'
+import HomePage from '../pages/Home/HomePage'
+import ApplicationFormPage from '../pages/ApplicationForm/ApplicationFormPage'
+import ListTripsPage from '../pages/ListTrips/ListTripsPage'
+import CreateTripPage from '../pages/CreateTrip/CreateTripPage'
+import TripDetailsPage from '../pages/TripDetail/TripDetailsPage'
+import LoginPage from '../pages/Login/LoginPage'
+import AdmListPage from '../pages/AdminList/AdmListPage'
 // import Header from '../components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 

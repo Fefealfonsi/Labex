@@ -1,27 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-import Header from './Header'
+import Header from '../../components/Header'
+import {HomeContainer, TextContainer} from "./styled"
 
-const HomeContainer=styled.div`
- display:flex;
- justify-content:center;
- height:100vh; 
-`
-const TextContainer=styled.div`
-  width: 900px;
-  height: 30%;
-  margin: 2em;
-  padding: 2em;
-  text-align:justify;
-  border:solid 2px;
-  background-color: rgba(0,0,0,0.5);
-  p{
-    color:white;
-  }
-`
 
 function HomePage() {
-
   
   return (
   <div>
@@ -36,10 +18,6 @@ function HomePage() {
     </HomeContainer>
        
   </div>
-
-    
-  
-    
   );
 }
 
