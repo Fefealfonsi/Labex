@@ -21,7 +21,6 @@ width: 300px;
 margin: 0.5em;
 border-radius:20px;
 border:none;
-
 `
 
 export const Select = styled.select`

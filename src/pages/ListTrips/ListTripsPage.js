@@ -1,45 +1,42 @@
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
+import React from 'react'
 import { useRequestData } from "../../hooks/useRequestData";
-import {ContainerList, Card, ButtonApplication} from './styled'
-import Header from '../../components/Header'
-
-
+import {ContainerList} from './styled'
+import { Card } from '../../components/Card';
+import {goToApplication} from '../../router/coordinator'
+import { useNavigate } from 'react-router-dom';
+import { Loader } from '../../components/Loader';
 
 function ListTripsPage() {
-  
-  const getSpaceTrip=useRequestData(
+
+  const navigate = useNavigate()
+
+  const [getSpaceTrip,isLoading]=useRequestData(
     "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips", undefined
     
   );
 
   
-  const history=useHistory()
-
-  const goToApplication=(id)=>{
-    history.push(`/applicationForm/${id}`)
-    
-  } 
-
-  
     const list= getSpaceTrip && getSpaceTrip.trips.map((trip,i) =>{
-      return (< Card>
-         <img src={`https://picsum.photos/200/200?a=${i}]`}/>
-          <h4 key={trip.id}>{ trip.name}</h4>
-          <p >{ trip.description}</p>
-          <p>planeta: {trip.planet}</p>
-          <p>duração: {trip.durationInDays}</p>
-          <p>Data: {trip.date}</p>
-          <ButtonApplication onClick={()=>{goToApplication(trip.id)}}>Quero ir</ButtonApplication>
-      </ Card>
+      return (< Card 
+        key={trip.id}
+        image={`https://picsum.photos/200/200?a=${i}`}
+        name={trip.name}
+        description={trip.description}
+        planet={trip.planet}
+        duration={trip.duration}
+        date={trip.date}
+        id={trip.id}
+        function ={()=>goToApplication(trip.id, navigate)}
+        message={'Quero ir'}
+      />
+      
       );
     })
 
     return(
       <div>
-        <Header/>
         <ContainerList>
-          {list}
+          {isLoading?<Loader/>:list}
         </ContainerList>
       </div>
     

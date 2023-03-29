@@ -1,28 +1,22 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import { useProtectedPage } from "../../hooks/useProtectPage";
 import axios from "axios";
-import AdmHeader from '../../components/AdmHeader'
-import {ContainerForm, Form, Input, Select, ButtonForm} from "./styled"
+import {ContainerForm, Form, Select} from "./styled"
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { goToAdminList } from '../../router/coordinator';
+import { useNavigate } from 'react-router-dom';
 
 
 function CreateTripPage() {
 
-  const history = useHistory()
-  const goToHome = () => {
-    history.push('/')
-  }
   useProtectedPage();
-
+  const navigate = useNavigate()
 
   const { form, onChange, clearForm } = useForm({ name: "", planet: "", date: "", description: "", durationInDays: "" });
 
-  const handleInputChange = (event) => {
-    const { value, name } = event.target;
-
-    onChange(value, name);
-  };
+ 
 
   const onSubmitForm = (event) => {
     event.preventDefault();
@@ -45,33 +39,33 @@ function CreateTripPage() {
       .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips`, form, axiosConfig)
       .then((response) => {
         alert("Viagem Criada com suceso!")
-        console.log("OK", response)
         clearForm()
+        goToAdminList(navigate)      
       })
       .catch(err => {
-        console.log(err)
+        alert('Ops, algo deu errado, verifique os campos')
+        console.log(err.message)
       })
   }
 
-
-
   return (
-    <div>
-      <AdmHeader />
+    
+     
       <ContainerForm>
         <h1>Criar Viagem </h1>
         <Form onSubmit={onSubmitForm}>
           <Input
             value={form.name}
             placeholder={"Nome da Viagem"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"name"}
             type={"text"}
             pattern={"(.*[a-z]){5}"}
-            required
+            title={"Nome com pelo menos 5 caracteres"}
+            
           />
           <Select placeholder={"Planeta"}
-            onChange={handleInputChange}
+            onChange={onChange}
             value={form.planet}
             name={"planet"}
             type={"text"}
@@ -90,37 +84,37 @@ function CreateTripPage() {
           <Input
             value={form.durationInDays}
             placeholder={"Duração em Dias"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"durationInDays"}
             type={"number"}
-            min="50"
-            required
+            min="51"
+           
           />
           <Input
             value={form.date}
             placeholder={"Data"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"date"}
             type={"date"}
             min={dataAtual}
-            required
+           
           />
 
           <Input
             value={form.description}
             placeholder={"Descrição da Viagem"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"description"}
             type={"text"}
-            pattern={"(.*[a-z]){30}"}
-            required
+            pattern={"(.*[a-z]){5}"}
+            title={"Descrição com pelo menos 30 caracteres"}
           />
-          <ButtonForm onClick={onSubmitForm}>Inscrever-se</ButtonForm>
+           <Button type={'submit'} message={"Criar Viajem"}/>
         </Form>
 
 
       </ContainerForm>
-    </div>
+  
   );
 }
 

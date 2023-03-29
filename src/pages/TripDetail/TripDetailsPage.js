@@ -1,41 +1,49 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useProtectedPage } from "../../hooks/useProtectPage";
-import{DetailContainer,Card, Detail, Photo, ButtonAcept} from "./styled"
-import { useParams, useHistory } from 'react-router-dom'
-import AdmHeader from "../../components/AdmHeader";
+import { DetailContainer, Card, Detail, Photo, ButtonAcept, DeleteTrip } from "./styled"
+import { useParams, useNavigate } from 'react-router-dom'
+import { goToAdminList } from "../../router/coordinator";
 
 
 function TripDetailsPage() {
 
+  useProtectedPage();
   const { id } = useParams()
   const [trips, setTrips] = useState({});
-  const [candidates, setCandidates]= useState([]);
-  const [approved, setApproved]= useState([]);
-  
-  useProtectedPage();
+  const [candidates, setCandidates] = useState([]);
+  const [approved, setApproved] = useState([]);
 
-  const history=useHistory()
+  const navigate = useNavigate()
 
-  const goToHome=()=>{
-    history.push('/')
+  const deleteTrip =(id)=>{
+
+    const axiosConfig = {
+      headers: { auth: localStorage.getItem("token") }
+    }
+    axios.delete( `https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips/${id}`, axiosConfig)
+    .then((res)=>{
+      alert("Viagem deletada")
+      goToAdminList(navigate)
+     
+    })
+    .catch((err)=>{
+      alert(err);
+    })
   }
 
   const getTripDetail = () => {
     const axiosConfig = {
       headers: { auth: localStorage.getItem("token") }
-  }
+    }
     axios
       .get(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trip/${id}`,axiosConfig)
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trip/${id}`, axiosConfig)
 
-        .then((res) => {
+      .then((res) => {
         setTrips(res.data.trip);
         setCandidates(res.data.trip.candidates)
         setApproved(res.data.trip.approved)
-        console.log( "Detalhes",res)
-        console.log("trips",trips)
-        console.log("Approved",approved)
       })
       .catch((err) => {
         console.log(err);
@@ -43,69 +51,69 @@ function TripDetailsPage() {
   };
   useEffect(() => {
     getTripDetail()
-  }, [])
+  }, [id])
 
   const aceptCandidate = (candidateId, approve) => {
     const axiosConfig = {
-        headers: { auth: localStorage.getItem("token") }
+      headers: { auth: localStorage.getItem("token") }
     }
     const body = {
-        approve: approve
+      approve: approve
     }
     axios
-        .put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips/${id}/candidates/${candidateId}/decide`, body, axiosConfig)
-        .then((response) => {
-         
-          if(approve){
-            alert("Aprovadeeeeeeeee!!!!!")
-          }else{
-            alert("Ahhhhh, tente novamente!")
-          }
-           getTripDetail()
-            console.log ("Aprovados",response.data)
-        })
-        .catch(e => {
-            console.log(e)
-        })
+      .put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips/${id}/candidates/${candidateId}/decide`, body, axiosConfig)
+      .then((response) => {
+
+        if (approve) {
+          alert("Candidato provado")
+        } else {
+          alert("Candidato não provado")
+        }
+        getTripDetail()
+
+      })
+      .catch(e => {
+        console.log(e)
+      })
   }
 
-  
-  const candidatos = candidates.map((candidate,i)=>{
-    return(
-    <div>
-      <Detail>
-       <Photo src={`https://picsum.photos/200/200?a=${i}]`}/>
-        <p key={candidate.id}>Olá meu nome é {candidate.name}, tenho {candidate.age} anos, meu país é {candidate.country} e sou {candidate.profession}</p>
-      </Detail>
-      <p>{candidate.applicationText}</p>
-      <ButtonAcept onClick={()=>{aceptCandidate(candidate.id,true)}}>Yes</ButtonAcept>
-      <ButtonAcept onClick={()=>{aceptCandidate(candidate.id,false)}}>No</ButtonAcept>
-    </div>
+
+  const candidatos = candidates.map((candidate, i) => {
+    return (
+      <div key={candidate.id}>
+        <Detail>
+          <Photo src={`https://picsum.photos/200/200?a=${i}]`} />
+          <p key={candidate.id}>Olá meu nome é {candidate.name}, tenho {candidate.age} anos, meu país é {candidate.country} e sou {candidate.profession}</p>
+        </Detail>
+        <p>{candidate.applicationText}</p>
+        <ButtonAcept onClick={() => { aceptCandidate(candidate.id, true) }}>Yes</ButtonAcept>
+        <ButtonAcept onClick={() => { aceptCandidate(candidate.id, false) }}>No</ButtonAcept>
+      </div>
     );
   })
 
-  const aprovados= approved.map((candidate,i)=>{
-    return(
-    <div>
+  const aprovados = approved.map((candidate, i) => {
+    return (
+
       <Detail key={candidate.id}>
-      <hr/>
-       <Photo src={`https://picsum.photos/200/200?a=${i}]`}/>
+        <hr />
+        <Photo src={`https://picsum.photos/200/200?a=${i}]`} />
         <div>
-          <p><strong>Nome: </strong>{candidate.name}</p> 
-          <p><strong>Idade: </strong>{candidate.age}</p> 
-          <p><strong>País: </strong>{candidate.country}</p> 
-          <p><strong>Profissão: </strong>{candidate.profession}</p> 
+          <p><strong>Nome: </strong>{candidate.name}</p>
+          <p><strong>Idade: </strong>{candidate.age}</p>
+          <p><strong>País: </strong>{candidate.country}</p>
+          <p><strong>Profissão: </strong>{candidate.profession}</p>
         </div>
-        <hr/>
+        <hr />
       </Detail>
-     
-    </div>
+
+
     );
   })
 
   return (
-  <div>
-      <AdmHeader/>
+    <div>
+
       <DetailContainer>
         <Card>
           <h2>Detalhes da Viagen</h2>
@@ -114,9 +122,10 @@ function TripDetailsPage() {
           <p>Data: {trips.date}</p>
           <p>Duração:{trips.durationInDays}</p>
           <p>Descrição: {trips.description}</p>
-          <br/>
-          <hr/>
-          <br/>
+          <DeleteTrip onClick={()=>deleteTrip(id)}>Apagar Viagem</DeleteTrip>
+          <br />
+          <hr />
+          <br />
           <h2>Candidatos aprovados</h2>
           {aprovados}
         </Card>
@@ -125,14 +134,14 @@ function TripDetailsPage() {
           <h2>Controle de viajantes</h2>
           <h4>Atividade: {trips.name}</h4>
           {candidatos}
-          
+
 
         </Card>
       </DetailContainer>
-  </div>
-    
+    </div>
 
-    
+
+
   );
 }
 

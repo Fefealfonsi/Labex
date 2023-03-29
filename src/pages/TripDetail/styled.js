@@ -39,3 +39,15 @@ export const DetailContainer = styled.div`
     
     } 
   `
+  export const DeleteTrip = styled.button`
+  background-color:rgba(92, 20, 33) ;
+  padding:10px 13px;
+  margin:10px;
+  border-radius:30px;
+  border:none;
+  cursor:pointer;
+  :hover{
+    background-color:rgba(207, 25, 58) ;
+  }
+  
+  `

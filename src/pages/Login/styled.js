@@ -10,13 +10,14 @@ export const ContainerForm = styled.div`
   }
   height:100vh;
  `
-export const Input = styled.input`
-  padding: 10px;
-  width: 300px;
-  margin: 0.5em;
-  border-radius:20px;
-  border:none;
+ export const Form= styled.form`
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ margin:2em;
+
 `
+
 export const ButtonForm = styled.button`
     background-color: rgba(0,0,0,0.8);
     height:70px;
@@ -26,4 +27,8 @@ export const ButtonForm = styled.button`
     font-family: 'Audiowide', cursive;
     border-radius:30px;   
     font-size: 20px;
+
+    &:hover{
+      background-color: rgba(10,0,70,0.5);
+    }   
 `
