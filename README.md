@@ -14,6 +14,15 @@ Suas funcionalidades são: </h3>
 <h3> 🔗 Link do Surge </h3>
 http://projeto-labex.surge.sh
 
+## Índice
+- <a href="#O_que_funciona_no_projeto:">Funcionalidades do Projeto</a>
+ - <a href="#Perfil_de_admnistrador ">Perfil de admnistrador </a>
+ - <a href="#demonstracao">Demonstração</a>
+ - <a href="#rodar">Como rodar este projeto?</a>
+ - <a href="#tecnologias">Tecnologias Utilizadas</a>
+ - <a href="#autoras">Pessoas Autoras</a>
+ - <a href="#passos">Próximos Passos</a>
+
 <h3> ✅ O que funciona no projeto: </h3>
 <p> 1-)Formulário de inscrição.</p>
 <p> 2-) Formulário de criação de viagens</p>
@@ -23,7 +32,8 @@ http://projeto-labex.surge.sh
 <p> 6-) Função de apagar a viagem</p>
 <p> 7-) Rotas</p>
 
-<h3> 🛅 Para entrar no perfil de admnistrador </h3>
+<h3> 🛅 Perfil de admnistrador </h3>
+<h6> Para entrar no perfil de administrador para logar</h6>
 <p> email: fernanda@gmail.com</p>
 <p> senha: 123456</p>
 
@@ -39,14 +49,16 @@ http://projeto-labex.surge.sh
 <p> 2-) Axios </p>
 <p> 3-) React-router-dom v.6</p>
 
-![image](https://user-images.githubusercontent.com/71261731/112919752-11c20700-90de-11eb-9b06-6c7170e705a7.png)
-![image](https://user-images.githubusercontent.com/71261731/112919782-22727d00-90de-11eb-87ce-1b5e24604dbf.png)
-![image](https://user-images.githubusercontent.com/71261731/112919826-3322f300-90de-11eb-9dc0-f12247a86411.png)
-![image](https://user-images.githubusercontent.com/71261731/112919901-50f05800-90de-11eb-90d1-b750772767cf.png)
-![image](https://user-images.githubusercontent.com/71261731/112919936-5e0d4700-90de-11eb-9a68-acad8bf4e3ca.png)
-![image](https://user-images.githubusercontent.com/71261731/112919972-6d8c9000-90de-11eb-9d7c-bec916cf6afb.png)
+
+<h3> 📸 Imagens do Projeto:</h3>
 
 
+<img width="1415" alt="Captura de Tela 2023-03-29 às 20 19 44" src="https://user-images.githubusercontent.com/71261731/228689127-5175a340-d934-4c28-8780-9f35a8b467ea.png">
 
+<img width="1415" alt="Captura de Tela 2023-03-29 às 20 20 06" src="https://user-images.githubusercontent.com/71261731/228689162-797d2816-645b-4c46-96bb-4187394ee6ce.png">
+<img width="1404" alt="Captura de Tela 2023-03-29 às 20 20 25" src="https://user-images.githubusercontent.com/71261731/228689196-3ffc7973-4291-4387-86d2-6ca2ceaac13b.png">
+<img width="1413" alt="Captura de Tela 2023-03-29 às 20 21 36" src="https://user-images.githubusercontent.com/71261731/228689352-1f0bf25e-a22a-446e-ab1c-d5fc664b953c.png">
 
+<img width="1407" alt="Captura de Tela 2023-03-29 às 20 21 16" src="https://user-images.githubusercontent.com/71261731/228689305-0244a927-42c4-47a9-9656-795d0073e90b.png">
 
+<img width="1406" alt="Captura de Tela 2023-03-29 às 20 22 12" src="https://user-images.githubusercontent.com/71261731/228689420-813b69c2-d8dc-4491-a377-f8dd30626ab6.png">
