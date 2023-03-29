@@ -23,7 +23,7 @@ http://projeto-labex.surge.sh
  - <a href="#autoras">Pessoas Autoras</a>
  - <a href="#passos">Próximos Passos</a>
 
-<h3> ✅ O que funciona no projeto: </h3>
+## ✅ O que funciona no projeto: 
 <p> 1-)Formulário de inscrição.</p>
 <p> 2-) Formulário de criação de viagens</p>
 <p> 3-) Página de visualização de viagens </p>
@@ -32,22 +32,22 @@ http://projeto-labex.surge.sh
 <p> 6-) Função de apagar a viagem</p>
 <p> 7-) Rotas</p>
 
-<h3> 🛅 Perfil de admnistrador </h3>
+## 🛅 Perfil de admnistrador 
 <h6> Para entrar no perfil de administrador para logar</h6>
 <p> email: fernanda@gmail.com</p>
 <p> senha: 123456</p>
 
 <h3> 🚀 API utilizada no Projeto: </h3>
-<p align="left"> <a href="[https://www.w3schools.com/css/](https://documenter.getpostman.com/view/9133542/TzCTZkQr#944aa407-e2b9-4b83-9eb8-efc448598c0a)" target="_blank"> <img 
+[Labex](https://documenter.getpostman.com/view/9133542/TzCTZkQr#944aa407-e2b9-4b83-9eb8-efc448598c0a)
 
 <h3> 💡 Tecnologias utilizadas:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p>
 
 <h3> 📚 Bibliotcas utilizadas:</h3>
 
-<p> 1-) Styled Components </p>
-<p> 2-) Axios </p>
-<p> 3-) React-router-dom v.6</p>
+1. [Styled Components](https://styled-components.com/)
+2. [Axios](https://axios-http.com/ptbr/docs/intro)
+3. [React Router v.6](https://reactrouter.com/)
 
 
 <h3> 📸 Imagens do Projeto:</h3>
