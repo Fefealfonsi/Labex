@@ -20,19 +20,24 @@ http://projeto-labex.surge.sh
 <p> 3-) Página de visualização de viagens </p>
 <p> 4-) Página de visualização de detalhes das viagens </p>
 <p> 5-) Botões de aceite ou negação de candidato </p>
-<p> 5-) Botões em geral </p>
+<p> 6-) Função de apagar a viagem</p>
+<p> 7-) Rotas</p>
 
 <h3> 🛅 Para entrar no perfil de admnistrador </h3>
 <p> email: fernanda@gmail.com</p>
 <p> senha: 123456</p>
+
+<h3> 🚀 API utilizada no Projeto: </h3>
+<p align="left"> <a href="[https://www.w3schools.com/css/](https://documenter.getpostman.com/view/9133542/TzCTZkQr#944aa407-e2b9-4b83-9eb8-efc448598c0a)" target="_blank"> <img 
 
 <h3> 💡 Tecnologias utilizadas:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p>
 
 <h3> 📚 Bibliotcas utilizadas:</h3>
 
-<p> 2-) Styled Components </p>
-<p> 3-) Axios </p>
+<p> 1-) Styled Components </p>
+<p> 2-) Axios </p>
+<p> 3-) React-router-dom v.6</p>
 
 ![image](https://user-images.githubusercontent.com/71261731/112919752-11c20700-90de-11eb-9b06-6c7170e705a7.png)
 ![image](https://user-images.githubusercontent.com/71261731/112919782-22727d00-90de-11eb-87ce-1b5e24604dbf.png)
