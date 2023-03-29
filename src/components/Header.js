@@ -1,62 +1,66 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
+import { Button } from './Button'
 
-const HeaderContainer=styled.div`
-display:flex;
-justify-content: space-around;
-
-p{
-  color:white;
-  font-size: 100px;
-  font-family: 'Audiowide', cursive;
-
-}
-`
-const ButtonHeader=styled.button`
-background-color:black;
-height:70px;
-margin-top:1.5em;
-color:white;
-padding:0.5em;
-font-family: 'Audiowide', cursive;
-border-radius:30px;   
-font-size: 20px;
-&:hover{
-  height:75px;
-  background-color: rgba(10,0,70,0.5);
-
-}
-
-`
-
-const Header=() =>{
-
-  const history = useHistory()
+import { goToHome, goToCreateList, goToListTrips, goToLogin, goToAdminList } from '../router/coordinator'
 
 
-  const goToLogin = () => {
-    history.push("/login")
-  };
+const Header = () => {
 
+  const navigate = useNavigate()
 
+  const token = localStorage.getItem("token")
+   const path = window.location.pathname
+   
 
-  const goToListTrips = () => {
-    history.push("/listTrips")
-  };
-
-  const goToHome = () => {
-    history.push("/")
+  const logout = () => {
+    window.localStorage.clear();
+    goToHome(navigate)
   };
 
   return (
     < HeaderContainer>
       <p>LabeX</p>
-        <ButtonHeader onClick={goToHome}> Home </ButtonHeader>
-        <ButtonHeader onClick={goToListTrips}> viaje com a gente</ButtonHeader>
-        <ButtonHeader onClick={goToLogin}> Fazer Login</ButtonHeader>
+      <Button
+        function={() => goToHome(navigate)}
+        message={"Home"}
+      />
+
+      {token ?  (path !== "/admList"? <Button
+        function={() => goToAdminList(navigate)}
+        message={"Voltar para lista"}
+      />: <Button
+      function={() => goToCreateList(navigate)}
+      message={"Criar Viagens"}
+    />)
+        : <Button
+        function={() => goToListTrips(navigate)}
+        message={"Viaje com a gente"}
+      />}
+
+      {token ? <Button
+        function={logout}
+        message={"Fazer Logout"}
+      />
+        : <Button
+        function={() => goToLogin(navigate)}
+        message={"Login Adm."}
+      />}
     </ HeaderContainer>
   );
 }
 
-export default Header;
+export default Header
+
+const HeaderContainer = styled.div`
+display:flex;
+justify-content: space-around;
+
+p{
+  color:white;
+  font-size: 5rem;
+  font-family: 'Audiowide', cursive;
+
+}
+`

@@ -1,19 +1,17 @@
 import React from 'react'
-import { useParams,useHistory } from 'react-router-dom'
+import { useNavigate, useParams, } from 'react-router-dom'
 import {useForm} from '../../hooks/useForm'
 import axios from "axios";
 import {Countries} from "../../components/Countries"
-import Header from '../../components/Header'
-import {ContainerForm,Form,Input, Select, ButtonForm}from "./styled"
+import {ContainerForm,Form,Select, ButtonForm}from "./styled"
+import { Input } from '../../components/Input';
+import { goToListTrips } from '../../router/coordinator';
 
-function ApplicationFormPage(props) {
+function ApplicationFormPage() {
   const { id } = useParams()
   const { form, onChange, clearForm} = useForm({ name: "", age: "", profession: "",country:"",applicationText:"" });
- 
-    const handleInputChange = (event) => {
-      const { value, name } = event.target;
-      onChange(value, name);
-    };
+ const navigate = useNavigate()
+   
   
     const onSubmitForm = (event) => {
       event.preventDefault();
@@ -28,6 +26,7 @@ function ApplicationFormPage(props) {
         .then((response) => {
          alert("Obrigada por se inscrver, estamos na torcida!")
          clearForm()
+         goToListTrips(navigate)
         
         })
         .catch(err => {
@@ -39,14 +38,14 @@ function ApplicationFormPage(props) {
   
     return (
       <div>
-        <Header/>
+        
         <ContainerForm>
         <h1>Formulário de Inscrição</h1>
         <Form onSubmit={onSubmitForm}>
           <Input
             value={form.name}
             placeholder={"Nome"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"name"}
             type={"text"}
             pattern={"(.*[a-z]){3}"}
@@ -57,7 +56,7 @@ function ApplicationFormPage(props) {
           <Input
             value={form.age}
             placeholder={"Idade"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"age"}
             type={"number"}
             min="18"
@@ -67,7 +66,7 @@ function ApplicationFormPage(props) {
           <Input
             value={form.profession}
             placeholder={"Profissão"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"profession"}
             type={"text"}
             pattern={"(.*[a-z]){10}"}
@@ -75,7 +74,7 @@ function ApplicationFormPage(props) {
             required
           />
           <Select placeholder={"País"} 
-            onChange={handleInputChange} 
+            onChange={onChange} 
             value={form.country}
             name={"country"}
             type={"text"}
@@ -86,14 +85,14 @@ function ApplicationFormPage(props) {
            <Input
             value={form.applicationText}
             placeholder={"Por que quer se candidatar?"}
-            onChange={handleInputChange}
+            onChange={onChange}
             name={"applicationText"}
             type={"text"}
             pattern={"(.*[a-z]){30}"}
             title= "O texto de candidatura deve ter ao menos 30 caracteres"
             required
           />
-          <ButtonForm onClick={onSubmitForm}>Inscrever-se</ButtonForm>
+          <ButtonForm type='submit'>Inscrever-se</ButtonForm>
         </Form>
         
         </ContainerForm>

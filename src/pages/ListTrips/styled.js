@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const ContainerList= styled.div`
-display:grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 width:100vw;
+min-height:100vh;
 `
 
 export const Card = styled.div`
@@ -13,7 +15,7 @@ border:solid 2px;
 padding:1em;
 background-color: rgba(0,0,0,0.5);
 p,h4{
- color:white;
+  color:white;
 }
 
 

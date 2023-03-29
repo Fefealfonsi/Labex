@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function useProtectedPage() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      history.push("/login");
+      navigate("/login");
     }
 
     // utilizando ternário
-    // token ? getTripDetail() : history.push('/')
-  }, [history]);
+    // token ? getTripDetail() : navigate('/')
+  }, [navigate]);
 }

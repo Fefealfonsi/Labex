@@ -6,45 +6,26 @@ import CreateTripPage from '../pages/CreateTrip/CreateTripPage'
 import TripDetailsPage from '../pages/TripDetail/TripDetailsPage'
 import LoginPage from '../pages/Login/LoginPage'
 import AdmListPage from '../pages/AdminList/AdmListPage'
-// import Header from '../components/Header'
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Header from '../components/Header'
+
 
 function Router() {
+
   return (
     <BrowserRouter>
-    <Switch>
-      
-      <Route exact path="/">
-        <HomePage/>
-      </Route>
+      <Header />
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path='/listTrips' element={<ListTripsPage />} />
+        <Route path='/applicationForm/:id' element={<ApplicationFormPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/admList' element={<AdmListPage />} />
+        <Route path='/tripDetails/:id' element={<TripDetailsPage />} />
+        <Route path='/createTrip' element={<CreateTripPage />} />
+      </Routes >
+    </BrowserRouter>
 
-      <Route exact path="/applicationForm/:id">
-        <ApplicationFormPage/>
-      </Route>
-
-      <Route exact path="/listTrips">
-        <ListTripsPage/>
-      </Route>
-
-      <Route  exact path="/login">
-       <LoginPage/>
-      </Route>
-
-      <Route exact path="/admList">
-        <AdmListPage/>
-      </Route>
-
-      <Route exact path="/tripDetails/:id">
-        <TripDetailsPage/>
-      </Route>
-
-      <Route exact path="/createTrip">
-        <CreateTripPage/>
-      </Route>
-
-    </Switch >
-  </BrowserRouter>
-  
 
   );
 }

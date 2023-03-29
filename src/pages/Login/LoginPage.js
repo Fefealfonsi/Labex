@@ -1,60 +1,66 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import Header from '../../components/Header'
-import {ContainerForm,Input,ButtonForm } from "./styled"
+import {ContainerForm,Form } from "./styled"
+import { Input } from "../../components/Input";
+import { useForm } from "../../hooks/useForm";
+import { Button } from "../../components/Button";
+
 
 
 function LoginPage() {
-  const [admEmail, setAdmEmail] = useState("");
-  const [admPassword, setAdmPassword] = useState("");
-  const history = useHistory();
+ 
+  const {form, onChange, clearForm}=useForm({email:"", password:""})
+  console.log(form);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
+  
 
-    if (token) {
-      history.push("/admList");
-    }
-    
-  }, [history]);
-
-  const handleEmail = (event) => {
-    setAdmEmail(event.target.value);
-  };
-
-  const handlePassword = (event) => {
-    setAdmPassword(event.target.value);
-  };
-
+  const submitForm=(event)=>{
+    event.preventDefault();
+    login()
+   }
   const login = () => {
-    const body = {
-      email: admEmail,
-      password: admPassword
-    };
-
+   
     axios
       .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/login",
-        body
+        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/login",form
       )
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        history.push("/admList");
+        clearForm()
+        navigate("/admList");
       })
       .catch((err) => {
-        console.log(err);
+        alert(`Confira seu e-mail e senha erro ${err}`);
       });
   };
+   
 
   return (
     <div>
-      <Header/>
+      
       <ContainerForm>
         <h1>Login</h1>
-        <Input value={admEmail} onChange={handleEmail} type="email" placeholder="E-mail"/>
-        <Input value={admPassword} onChange={handlePassword} type="password" placeholder="Senha"/>
-        <ButtonForm onClick={login}>Fazer login</ButtonForm>
+        <Form onSubmit={submitForm}>
+
+        <Input
+        value={form.email}
+        name={"email"} 
+        onChange={onChange} 
+        type={"email"}
+        placeholder={"e-mail"}/>
+
+        <Input 
+        value={form.password} 
+        name={"password"}
+        onChange={onChange} 
+        type={"password"}
+        placeholder={"Senha"}
+        />
+        
+        <Button type={'submit'} message={"Fazer login"}/>
+        </Form>
         </ContainerForm>
     </div>
     
