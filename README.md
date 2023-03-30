@@ -16,12 +16,12 @@ Suas funcionalidades são: </h3>
  - <a href="#funcionalidades">Funcionalidades</a>
  - <a href="#perfil-de-admnistrador ">Perfil de admnistrador </a>
  - <a href="#demonstração">Demonstração</a>
- - <a href="#API_utilizada_no_Projeto">API utilizada no Projeto</a>
- - <a href="#tecnologias_utilizadas">Tecnologias Utilizadas</a>
+ - <a href="#API-utilizada-no-Projeto">API utilizada no Projeto</a>
+ - <a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a>
  - <a href="#bibliotecas">Bibliotecas</a>
- - <a href="#como_rodar_o_projeto">Como rodar este projeto</a>
+ - <a href="#como-rodar-o-projeto">Como rodar este projeto</a>
  - <a href="#layout">Layout</a>
- - <a href="#pessoas autoras">Pessoas Autoras</a>
+ - <a href="#pessoas-autoras">Pessoas Autoras</a>
 
 
 ## ✅Funcionalidades. 
