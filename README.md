@@ -15,16 +15,16 @@ Suas funcionalidades são: </h3>
 ## Índice
  - <a href="#funcionalidades">Funcionalidades</a>
  - <a href="#perfil_de_admnistrador ">Perfil de admnistrador </a>
- - <a href="#demonstracao">Demonstração</a>
+ - <a href="#demonstração">Demonstração</a>
  - <a href="#API_utilizada_no_Projeto">API utilizada no Projeto</a>
  - <a href="#tecnologias_utilizadas">Tecnologias Utilizadas</a>
  - <a href="#bibliotecas">Bibliotecas</a>
  - <a href="#como_rodar_o_projeto">Como rodar este projeto</a>
  - <a href="#layout">Layout</a>
- - <a href="#pessoas_autoras">Pessoas Autoras</a>
+ - <a href="#pessoas autoras">Pessoas Autoras</a>
 
 
-## Funcionalidades. 
+## ✅Funcionalidades. 
 <p> 1-) Login.</p>
 <p> 2-) Formulário de criação de viagens</p>
 <p> 3-) Página de visualização de viagens </p>
@@ -33,7 +33,7 @@ Suas funcionalidades são: </h3>
 <p> 6-) Função de apagar a viagem</p>
 
 
-## Perfil de admnistrador.
+## 👨‍💻Perfil de admnistrador.
 <h6> Para entrar no perfil de administrador para logar</h6>
 <p> email: fernanda@gmail.com</p>
 <p> senha: 123456</p>
@@ -72,7 +72,7 @@ $ npm run start
 ```
 
 
-## 📸 Layout
+## 📸Layout
 
 
 <img width="1415" alt="Captura de Tela 2023-03-29 às 20 19 44" src="https://user-images.githubusercontent.com/71261731/228689127-5175a340-d934-4c28-8780-9f35a8b467ea.png">
@@ -85,7 +85,7 @@ $ npm run start
 
 <img width="1406" alt="Captura de Tela 2023-03-29 às 20 22 12" src="https://user-images.githubusercontent.com/71261731/228689420-813b69c2-d8dc-4491-a377-f8dd30626ab6.png">
 
-## 🤓 Pessoas Autoras
+## 🤓Pessoas Autoras
 
 <img style="width:200px" src="https://media.licdn.com/dms/image/C4E03AQFRjd7rLcMI5A/profile-displayphoto-shrink_800_800/0/1609250196674?e=1685577600&v=beta&t=LGZRkqLXLx_suDpgg3DGc5MOXelI5etuazjOq_-b6YE" alt="Imagem da desenvolvedora deste projeto">
 
