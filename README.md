@@ -20,11 +20,11 @@ Suas funcionalidades são: </h3>
  - <a href="#tecnologias_utilizadas">Tecnologias Utilizadas</a>
  - <a href="#bibliotecas">Bibliotecas</a>
  - <a href="#como_rodar_o_projeto">Como rodar este projeto</a>
- - - <a href="#layout">Layout</a>
+ - <a href="#layout">Layout</a>
  - <a href="#pessoas_autoras">Pessoas Autoras</a>
 
 
-## ✅ Funcionalidades. 
+## Funcionalidades. 
 <p> 1-) Login.</p>
 <p> 2-) Formulário de criação de viagens</p>
 <p> 3-) Página de visualização de viagens </p>
