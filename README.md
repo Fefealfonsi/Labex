@@ -33,12 +33,12 @@ Suas funcionalidades são: </h3>
 <p> 6-) Função de apagar a viagem</p>
 
 
-## 🛅 Perfil de admnistrador.
+## Perfil de admnistrador.
 <h6> Para entrar no perfil de administrador para logar</h6>
 <p> email: fernanda@gmail.com</p>
 <p> senha: 123456</p>
 
-## 🔗 Demonstração. 
+## Demonstração. 
 http://projeto-labex.surge.sh
 
 ## 🚀 API utilizada no Projeto.
