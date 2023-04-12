@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 
-export const Input = ({ value, placeholder, onChange, name, type, pattern,title, min}) => {
+export const Input = ({ value, placeholder, onChange, name, type, pattern,title, min, minlength}) => {
   
   return (
 
@@ -16,6 +16,7 @@ export const Input = ({ value, placeholder, onChange, name, type, pattern,title,
       pattern={pattern}
       title={title}
       min={min}
+      minlength={minlength}
       required
     />
 
