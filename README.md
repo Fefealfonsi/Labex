@@ -21,7 +21,7 @@ Suas funcionalidades são: </h3>
  - <a href="#bibliotecas">Bibliotecas</a>
  - <a href="#como-rodar-o-projeto">Como rodar este projeto</a>
  - <a href="#layout">Layout</a>
- - <a href="#pessoas-autoras">Pessoas Autoras</a>
+ - <a href="#pessoa-autora">Pessoa Autora</a>
 
 
 ## ✅Funcionalidades. 
@@ -31,7 +31,8 @@ Suas funcionalidades são: </h3>
 <p> 4-) Página de visualização de detalhes das viagens </p>
 <p> 5-) Botões de aceite ou negação de candidato </p>
 <p> 6-) Função de apagar a viagem</p>
-
+<p> 7-) Formulários validados</p>
+<p> 8-) Páginas de administrador autenticadas.</p>
 
 ## 👨‍💻Perfil de admnistrador.
 <h6> Para entrar no perfil de administrador para logar</h6>
@@ -85,7 +86,7 @@ $ npm run start
 
 <img width="1406" alt="Captura de Tela 2023-03-29 às 20 22 12" src="https://user-images.githubusercontent.com/71261731/228689420-813b69c2-d8dc-4491-a377-f8dd30626ab6.png">
 
-## 🤓Pessoas Autoras
+## 🤓Pessoa Autora
 
 <img style="width:200px" src="https://media.licdn.com/dms/image/C4E03AQFRjd7rLcMI5A/profile-displayphoto-shrink_800_800/0/1609250196674?e=1685577600&v=beta&t=LGZRkqLXLx_suDpgg3DGc5MOXelI5etuazjOq_-b6YE" alt="Imagem da desenvolvedora deste projeto">
 
