@@ -70,6 +70,7 @@ function CreateTripPage() {
             name={"planet"}
             type={"text"}
             required>
+            <option value="">Escolha um Planeta</option>
             <option key="Mercúrio" value="Mercúrio">Mercúrio</option>
             <option key="Vênus" value="Vênus">Vênus</option>
             <option key="Terra" value="Terra">Terra</option>
@@ -106,8 +107,8 @@ function CreateTripPage() {
             onChange={onChange}
             name={"description"}
             type={"text"}
-            pattern={"(.*[a-z]){5}"}
-            title={"Descrição com pelo menos 30 caracteres"}
+            pattern={".{30,}"}
+            title={"A descrição deve ter no mínimo 30 caracteres"}
           />
            <Button type={'submit'} message={"Criar Viajem"}/>
         </Form>

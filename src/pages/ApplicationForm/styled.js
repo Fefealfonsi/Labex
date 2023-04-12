@@ -17,13 +17,7 @@ export const ContainerForm= styled.div`
   margin:2em;
 
 `
-export const Input= styled.input`
-  padding: 10px;
-  width: 300px;
-  margin: 0.5em;
-  border-radius:20px;
-  border:none;
-`
+
 
 export const Select= styled.select`
   padding: 10px;

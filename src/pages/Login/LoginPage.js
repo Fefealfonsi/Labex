@@ -49,7 +49,10 @@ function LoginPage() {
         name={"email"} 
         onChange={onChange} 
         type={"email"}
-        placeholder={"e-mail"}/>
+        pattern={"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"}
+        title="seu email não está num formato válido"
+        placeholder={"e-mail"}
+        />
 
         <Input 
         value={form.password} 
@@ -57,6 +60,8 @@ function LoginPage() {
         onChange={onChange} 
         type={"password"}
         placeholder={"Senha"}
+        pattern={".{6,}"}
+        title="Sua senha deve ter no mínimo 6 caracteres"
         />
         
         <Button type={'submit'} message={"Fazer login"}/>

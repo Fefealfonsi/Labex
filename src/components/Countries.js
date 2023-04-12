@@ -4,6 +4,7 @@ import React from 'react'
 export const Countries=()=>{
   return(
   <>
+  <option value="">País</option>
   <option value="África do Sul">África do Sul</option>
   <option value="Albânia">Albânia</option>
   <option value="Alemanha">Alemanha</option>

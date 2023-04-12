@@ -4,12 +4,14 @@ import {useForm} from '../../hooks/useForm'
 import axios from "axios";
 import {Countries} from "../../components/Countries"
 import {ContainerForm,Form,Select, ButtonForm}from "./styled"
-import { Input } from '../../components/Input';
+
 import { goToListTrips } from '../../router/coordinator';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 
 function ApplicationFormPage() {
   const { id } = useParams()
-  const { form, onChange, clearForm} = useForm({ name: "", age: "", profession: "",country:"",applicationText:"" });
+  const { form, onChange, clearForm} = useForm({ name: "", age: "", applicationText:"",profession: "",country:"" });
  const navigate = useNavigate()
    
   
@@ -48,9 +50,9 @@ function ApplicationFormPage() {
             onChange={onChange}
             name={"name"}
             type={"text"}
-            pattern={"(.*[a-z]){3}"}
+            pattern={"(.*[a-z]){3,}"}
             title= "O nome deve ter ao menos 3 letras"
-            required
+          
           />
           
           <Input
@@ -60,8 +62,8 @@ function ApplicationFormPage() {
             name={"age"}
             type={"number"}
             min="18"
-            title= "você deve ter pelo menos 18 anos para se inscrever"
-            required
+            title= "Você deve ter pelo menos 18 anos para se inscrever"
+           
           />
           <Input
             value={form.profession}
@@ -69,9 +71,9 @@ function ApplicationFormPage() {
             onChange={onChange}
             name={"profession"}
             type={"text"}
-            pattern={"(.*[a-z]){10}"}
+            pattern={"(.*[a-z]){10,}"}
             title= "A profissão deve ter ao menos 10 caracteres"
-            required
+            
           />
           <Select placeholder={"País"} 
             onChange={onChange} 
@@ -88,11 +90,11 @@ function ApplicationFormPage() {
             onChange={onChange}
             name={"applicationText"}
             type={"text"}
-            pattern={"(.*[a-z]){30}"}
-            title= "O texto de candidatura deve ter ao menos 30 caracteres"
-            required
+            pattern={".{30,}"}
+            title= "O texto da candidatura deve ter ao menos 30 caracteres"
+         
           />
-          <ButtonForm type='submit'>Inscrever-se</ButtonForm>
+          <Button type={"submit"} message={"Enviar inscrição"}/>
         </Form>
         
         </ContainerForm>
